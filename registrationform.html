@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="registrationstyle.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="cakes/Mulberry_Funky_Cookie_Logo__1_-removebg-preview.png" alt="">
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menupage.html">Menu</a></li>
+                <li><a href="orderform.html">Order</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+                <a href="cart.html"><img class="cart" src="images/shopping-cart.png" alt=""></a>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <form action="#">
+            <h3>Registration</h3>
+            <label for="email">First Name </label>
+            <input type="text" id="fname">
+            <label for="email">Last Name </label>
+            <input type="text" id="lname">
+            <label for="email">Email <small>*</small></label>
+            <input type="email" id="email" required>
+            <label for="Password">Password <small>*</small></label>
+            <input type="password" name="password" id="password" required>
+
+            <div class="btn">
+                <button>
+                    <a href="index.html" class="btn-primary">Register</a>
+                </button>
+            </div>
+            <div class="link">
+                <a href="signin.html">Already have an account? Login in here</a>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="p2">
+            <p>Copyright ©2023 SweetsHouse Bakers. All Rights Reserved</p>
+
+        </div>
+        <div class="images">
+            <a href="#"><img class="fb" src="images/facebook.png" alt=""></a>
+            <a href="#"><img class="insta" src="images/instagram.png" alt=""></a>
+            <a href="#"><img class="github" src="images/github.png" alt=""></a>
+        </div>
+    </footer>
+</body>
+
+</html>
