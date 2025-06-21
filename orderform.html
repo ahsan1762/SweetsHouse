@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="orderstyle.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="cakes/Mulberry_Funky_Cookie_Logo__1_-removebg-preview.png" alt="">
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menupage.html">Menu</a></li>
+                <li><a href="orderform.html">Order</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+                <a href="cart.html"><img class="cart" src="images/shopping-cart.png" alt=""></a>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+       <form action="#" id="orderForm">
+  <h3>Billing and Shipping</h3>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+  <label for="fname">First Name <small>*</small></label>
+  <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+
+  <label for="lname">Last Name <small>*</small></label>
+  <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+
+  <label for="number">Phone <small>*</small></label>
+  <input type="tel" id="number" name="number" placeholder="Enter your phone number" required>
+
+  <label for="address">Address <small>*</small></label>
+  <input type="text" id="address" name="address" placeholder="Enter your full address" required>
+
+  <label for="city">City <small>*</small></label>
+  <input type="text" id="city" name="city" placeholder="Enter your city" required>
+
+  <label for="zipcode">Zipcode <small>*</small></label>
+  <input type="number" id="zipcode" name="zipcode" placeholder="Zipcode" required>
+
+  <p class="comment">
+    <label for="order_comment">Order Note</label>
+    <textarea name="order_comment" id="order_comment" cols="30" rows="10"
+      placeholder="Note about your order, e.g. icing message or delivery instructions."></textarea>
+  </p>
+
+  <div class="btn">
+    <button type="submit" class="btn-primary ">Place Order</button>
+    <button type="reset" class="btn-primary">Cancel</button>
+  </div>
+
+  <p id="responseMsg" style="color: green;"></p>
+</form>
+
+    </div>
+
+    <footer>
+        <div class="p2">
+            <p>Copyright ©2023 SweetsHouse Bakers. All Rights Reserved</p>
+
+        </div>
+        <div class="images">
+            <a href="#"><img class="fb" src="images/facebook.png" alt=""></a>
+            <a href="#"><img class="insta" src="images/instagram.png" alt=""></a>
+            <a href="#"><img class="github" src="images/github.png" alt=""></a>
+        </div>
+    </footer>
+
+    <script>
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('submit.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('responseMsg').innerText = data;
+      })
+      .catch(err => {
+        document.getElementById('responseMsg').innerText = '❌ JavaScript Error: ' + err.message;
+      });
+    });
+  </script>
+
+</body>
+
+</html>
